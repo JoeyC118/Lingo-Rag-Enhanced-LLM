@@ -2,102 +2,66 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Lingo AI Chat Interface Design System */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap');
+
+/* Lingo Design System - Language Learning App
+   Primary: Blue #3084CA | Accent: Lime #A5D332 | Base: White */
 
 @layer base {
   :root {
-    /* Core Background & Surfaces */
-    --background: 222 47% 6%;
-    --foreground: 210 40% 98%;
-    --surface: 222 38% 8%;
-    --surface-hover: 222 35% 12%;
+    --background: 0 0% 100%;
+    --foreground: 220 20% 15%;
 
-    /* Chat Interface Colors */
-    --chat-primary: 210 90% 60%;
-    --chat-primary-foreground: 210 40% 98%;
-    --chat-secondary: 262 52% 47%;
-    --chat-accent: 280 100% 70%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 15%;
 
-    /* Message Bubbles */
-    --message-user: 210 90% 60%;
-    --message-user-foreground: 210 40% 98%;
-    --message-ai: 222 35% 15%;
-    --message-ai-foreground: 210 40% 92%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 15%;
 
-    /* Legacy mappings for shadcn compatibility */
-    --card: 222 38% 8%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222 38% 8%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 252 83% 57%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 222 35% 15%;
-    --secondary-foreground: 210 40% 92%;
-    --muted: 222 30% 20%;
-    --muted-foreground: 215 20% 65%;
-    --accent: 280 100% 70%;
-    --accent-foreground: 222 47% 6%;
+    /* Blue primary #3084CA */
+    --primary: 207 60% 49%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 220 20% 15%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 10% 50%;
+
+    /* Lime accent #A5D332 */
+    --accent: 77 65% 51%;
+    --accent-foreground: 220 20% 15%;
+
     --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 222 30% 18%;
-    --input: 222 30% 18%;
-    --ring: 252 83% 57%;
+    --destructive-foreground: 0 0% 100%;
 
-    --radius: 0.5rem;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 207 60% 49%;
 
-    --sidebar-background: 0 0% 98%;
+    --radius: 0.75rem;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    /* Sidebar - light gray theme */
+    --sidebar-background: 220 14% 97%;
+    --sidebar-foreground: 220 20% 30%;
+    --sidebar-primary: 207 60% 49%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 77 65% 51%;
+    --sidebar-accent-foreground: 220 20% 15%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 207 60% 49%;
+    --sidebar-muted: 220 10% 50%;
+
+    /* Custom tokens */
+    --lingo-blue: 207 60% 49%;
+    --lingo-lime: 77 65% 51%;
+    --lingo-lime-light: 77 65% 92%;
+    --lingo-blue-light: 207 60% 95%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(207 60% 49%), hsl(207 70% 40%));
+    --gradient-accent: linear-gradient(135deg, hsl(77 65% 51%), hsl(77 70% 45%));
+    --gradient-hero: linear-gradient(135deg, hsl(207 60% 49%), hsl(77 65% 51%));
   }
 }
 
@@ -107,6 +71,30 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-hero);
+  }
+
+  .bg-gradient-primary {
+    background-image: var(--gradient-primary);
+  }
+
+  .bg-gradient-accent {
+    background-image: var(--gradient-accent);
+  }
+
+  .bg-gradient-hero {
+    background-image: var(--gradient-hero);
   }
 }
